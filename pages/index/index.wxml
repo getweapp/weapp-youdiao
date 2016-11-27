@@ -1,0 +1,133 @@
+<!--index.wxml-->
+<!-- <loading hidden="{{loadingHidden}}">加载中...</loading> -->
+<view class="container">
+  <view class="search-box">
+   <view class="bg-image"></view>
+   <input class="search-input" placeholder="搜索你想要的礼物" placeholder-class="placeholder-style" bindchange="bindChange"/>
+   <view class="search-btn">
+     <icon type="search" bindtap="confirm"/>
+   </view>
+  </view>
+
+  <!-- 功能区 -->
+  <view class="function-area">
+    <view class="tag"><text>挑礼神器</text></view>
+    <view class="function-list">
+      <navigator url="../filter/filter" hover-class="navigator-hover">
+        <view class="function">
+            <image src="icon/filter.png"></image>
+            <text>礼物挑选器</text>
+        </view>
+      </navigator>
+      <navigator url="../filter/filter" hover-class="navigator-hover">
+        <view class="function">
+            <image src="icon/secretary.png"></image>
+            <text>有调小秘书</text>
+        </view>
+     </navigator>
+     <navigator url="../gotogo/gotogo" hover-class="navigator-hover">
+        <view class="function">
+            <image src="icon/gotogo.png"></image>
+            <text>逛一逛</text>
+        </view>
+     </navigator>
+
+    </view>
+  </view>
+  <!-- meta列表 -->
+  <view class="metainfo-area">
+    <view class="tag"><text>礼物攻略</text></view>
+    <view class="up-list">
+        <view class="up-list-item">
+          <navigator url="../article/article">
+             <view class="item-desc-container">
+                <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20141015/firstpage/00_0.jpg"></image>
+                <view class="info-view">
+                  <text class="title">中式厨刀，原来也可以不平凡</text>
+                  <view class="content">sadasdasdasdadadsadsadas</view>
+                  <view class="item-footer">
+                    <view class="item-footer-author">
+                      <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="avatar"></image>
+                      <text>路人甲</text>
+                    </view>
+                    <view class="item-footer-view">
+                      <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="view"></image>
+                      <text>15280</text>
+                    </view>
+                  </view>
+                </view>
+             </view>
+           </navigator>
+       </view>
+       <view class="up-list-item">
+         <navigator url="../article/article">
+            <view class="item-desc-container">
+               <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20141015/firstpage/00_0.jpg"></image>
+               <view class="info-view">
+                 <text class="title">中式厨刀，原来也可以不平凡</text>
+                 <view class="content">sadasdasdasdadadsadsadas</view>
+                 <view class="item-footer">
+                   <view class="item-footer-author">
+                     <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="avatar"></image>
+                     <text>路人甲</text>
+                   </view>
+                   <view class="item-footer-view">
+                     <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="view"></image>
+                     <text>15280</text>
+                   </view>
+                 </view>
+               </view>
+            </view>
+          </navigator>
+      </view>
+      <view class="up-list-item">
+        <navigator url="../article/article">
+           <view class="item-desc-container">
+              <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20141015/firstpage/00_0.jpg"></image>
+              <view class="info-view">
+                <text class="title">中式厨刀，原来也可以不平凡</text>
+                <view class="content">sadasdasdasdadadsadsadas</view>
+                <view class="item-footer">
+                  <view class="item-footer-author">
+                    <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="avatar"></image>
+                    <text>路人甲</text>
+                  </view>
+                  <view class="item-footer-view">
+                    <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="view"></image>
+                    <text>15280</text>
+                  </view>
+                </view>
+              </view>
+           </view>
+         </navigator>
+     </view>
+     <view class="up-list-item">
+       <navigator url="../article/article">
+          <view class="item-desc-container">
+             <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20141015/firstpage/00_0.jpg"></image>
+             <view class="info-view">
+               <text class="title">中式厨刀，原来也可以不平凡</text>
+               <view class="content">sadasdasdasdadadsadsadas</view>
+               <view class="item-footer">
+                 <view class="item-footer-author">
+                   <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="avatar"></image>
+                   <text>路人甲</text>
+                 </view>
+                 <view class="item-footer-view">
+                   <image src="http://c.diaox2.com/cms/diaodiao/people/wangchen.jpg" class="view"></image>
+                   <text>15280</text>
+                 </view>
+               </view>
+             </view>
+          </view>
+        </navigator>
+    </view>
+    </view>
+  </view>
+</view>
+
+<!-- 模态框start -->
+<modal hidden="{{modalHidden}}" no-cancel confirm-text="确定" bindconfirm="hideModal">
+  {{info}}
+</modal>
+<!-- 模态框end -->

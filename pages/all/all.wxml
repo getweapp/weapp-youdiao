@@ -1,0 +1,150 @@
+<view class="container">
+
+  <view class="up-list">
+      <view class="up-list-item" wx:for="{{articles}}" wx:for-item="article">
+        <navigator url="../article/article?id={{articles.cid}}">
+           <view class="item-desc-container">
+              <image class="item-img" src="{{article.picUrl}}"></image>
+              <view class="info-view">
+                <text class="title">{{article.title}}</text>
+                <view class="target-word">
+                  <text class="keyword">{{article.keyword}}</text>
+                  <text class="other-word">胡子</text>
+                </view>
+              </view>
+           </view>
+         </navigator>
+     </view>
+  </view>
+
+  <!-- <view class="article-container" wx:for="{{articles}}" wx:for-item="article">
+    <view class="item">
+        <view class="{{article.type}}" wx:if="{{article.p == ''}}">
+          {{article.p}}
+        </view>
+        <image src="{{article.url}}" wx:if="{{article.url == ''}}"></image>
+    </view>
+  </view> -->
+
+
+  <!-- <view class="up-list">
+    <view class="up-list-item">
+     <view class="item-desc-container">
+        <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20141014/firstpage/00_5.jpg"></image>
+        <view class="info-view">
+          <text class="title">史上最全的分包装，最全最全史上最全的分包装</text>
+          <view class="target-word">
+            <text class="keyword">男人</text>
+            <text>胡子</text>
+          </view>
+        </view>
+     </view>
+   </view>
+
+   <view class="up-list-item">
+    <view class="item-desc-container">
+       <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20141229/firstpage/000a.jpg"></image>
+       <view class="info-view">
+         <text class="title">死了都要玩的极限旅游体验</text>
+         <view class="target-word">
+           <text class="keyword">男人</text>
+           <text>胡子</text>
+         </view>
+       </view>
+    </view>
+  </view>
+
+  <view class="up-list-item">
+   <view class="item-desc-container">
+      <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20160619/zk/zzzzz3.jpg"></image>
+      <view class="info-view">
+        <text class="title">男生应该有的逼格用品</text>
+        <view class="target-word">
+          <text class="keyword">男人</text>
+          <text>胡子</text>
+        </view>
+      </view>
+   </view>
+ </view>
+
+ <view class="up-list-item">
+  <view class="item-desc-container">
+     <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20151215/firstpage/4302thumb.jpg"></image>
+     <view class="info-view">
+       <text class="title">男士羽绒服品牌哪家强？不臃肿过寒冬就靠这些了</text>
+       <view class="target-word">
+         <text class="keyword">男人</text>
+         <text>胡子</text>
+       </view>
+     </view>
+  </view>
+</view>
+
+<view class="up-list-item">
+ <view class="item-desc-container">
+    <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20160105/zk/11330667_1623931707890215_851124902_n.jpg"></image>
+    <view class="info-view">
+      <text class="title">送给男人的礼物一发入魂就好</text>
+      <view class="target-word">
+        <text class="keyword">男人</text>
+        <text>胡子</text>
+      </view>
+    </view>
+ </view>
+</view>
+
+<view class="up-list-item">
+ <view class="item-desc-container">
+    <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20160425/goodthing/0.jpg"></image>
+    <view class="info-view">
+      <text class="title">Mandarina Duck双肩包，走向男生时尚第一步</text>
+      <view class="target-word">
+        <text class="keyword">男人</text>
+        <text>胡子</text>
+      </view>
+    </view>
+ </view>
+</view>
+
+<view class="up-list-item">
+ <view class="item-desc-container">
+    <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20160223/goodthing/thumbcordovan.jpg"></image>
+    <view class="info-view">
+      <text class="title">土屋鞄马臀皮钱包：男性优雅，令人屏息</text>
+      <view class="target-word">
+        <text class="keyword">男人</text>
+        <text>胡子</text>
+      </view>
+    </view>
+ </view>
+</view>
+
+<view class="up-list-item">
+ <view class="item-desc-container">
+    <image class="item-img" src="http://a.diaox2.com/cms/sites/default/files/20151124/goodthing/xks.jpg"></image>
+    <view class="info-view">
+      <text class="title">男人的心机，细节上的精致</text>
+      <view class="target-word">
+        <text class="keyword">男人</text>
+        <text>胡子</text>
+      </view>
+    </view>
+ </view>
+</view>
+
+<view class="up-list-item">
+ <view class="item-desc-container">
+    <image class="item-img" src="http://search.image.alimmdn.com/83/ea56169d2fcc71ea85d22759302f84a03a27920ed258abe8160bc1fb0@188w_188h_1e%7C188x188-5rc"></image>
+    <view class="info-view">
+      <text class="title">外表平平的男人，如何全方位提升气质？</text>
+      <view class="target-word">
+        <text class="keyword">男人</text>
+        <text>胡子</text>
+      </view>
+    </view>
+ </view>
+</view>
+
+</view> -->
+
+</view>

@@ -1,0 +1,251 @@
+<!--index.wxml-->
+<!-- <loading hidden="{{loadingHidden}}">加载中...</loading> -->
+<view class="container">
+
+  <view class="search-box">
+   <view class="bg-image"></view>
+   <input class="search-input" placeholder="搜索你想要的礼物" placeholder-class="placeholder-style" bindchange="bindChange" value="{{keyword}}"/>
+   <view class="search-btn">
+     <icon type="search" bindtap="search"/>
+   </view>
+  </view>
+
+  <view class="result-area">
+
+    <view class="historys-area" wx:if="{{historys.length > 0}}">
+      <view class="section-sep clearfix">
+        <text class="pull-left">历史记录</text>
+        <text class="pull-right" bindtap="clearAll">清空</text>
+      </view>
+
+      <view class="quick-search-container">
+        <view class="quick-search-list">
+          <view class="quick-search-item" wx:for="{{historys}}">
+            <text data-item="{{item}}" bindtap="historyItemTap">{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="hots-area">
+      <view class="section-sep clearfix">
+        <text class="pull-left">热门搜索</text>
+        <text class="pull-right" bindtap="changeAll">换一批</text>
+      </view>
+
+      <view class="quick-search-container">
+        <view class="quick-search-list">
+          <view class="quick-search-item" wx:for="{{hots}}">
+            <text data-item="{{item}}" bindtap="hotItemTap">{{item}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+ <view class="up-list">
+   <view class="up-list-item" wx:for="{{articles}}" wx:for-item="article">
+     <navigator url="../article/article?id={{article.cid}}">
+         <view class="item-desc-container">
+            <image class="item-img" src="{{article.picUrl}}"></image>
+            <view class="info-view">
+                 <text class="title">{{article.title}}</text>
+                 <view class="target-word">
+                   <image src="../../icon/eye.png"></image>
+                   <text>{{article.count}}</text>
+               </view>
+            </view>
+        </view>
+     </navigator>
+   </view>
+ </view>
+
+  <!-- <view class="up-list">
+    <view class="up-list-item" wx:for="articles">
+      <navigator url="../article/article?id=1">
+          <view class="item-desc-container">
+             <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161015/zk/SAOCOVER.jpg"></image>
+             <view class="info-view">
+                  <text class="title">史上最全的分包装，最全最全史上最全的分包装史上最全的分包装，最全最全史上最全的分包装史上最全的分包装，最全最全史上最全的分包装史上最全的分包装，最全最全史上最全的分包装史上最全的分包装，最全最全史上最全的分包装</text>
+                  <view class="target-word">
+                    <image src="../../icon/eye.png"></image>
+                    <text>12312</text>
+                </view>
+             </view>
+         </view>
+      </navigator>
+   </view>
+
+   <view class="up-list-item">
+     <navigator url="../article/article?id=2">
+    <view class="item-desc-container">
+       <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+       <view class="info-view">
+         <text class="title">死了都要玩的极限旅游体验死了都要玩的极限旅游体验死了都要玩的极限旅游体验</text>
+         <view class="target-word">
+           <image src="../../icon/eye.png"></image>
+           <text>12312</text>
+         </view>
+       </view>
+    </view>
+    </navigator>
+  </view>
+
+  <view class="up-list-item">
+    <navigator url="../article/article?id=2">
+   <view class="item-desc-container">
+      <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+      <view class="info-view">
+        <text class="title">死了都要玩的极限旅游体验</text>
+        <view class="target-word">
+          <image src="../../icon/eye.png"></image>
+          <text>12312</text>
+        </view>
+      </view>
+   </view>
+   </navigator>
+ </view>
+
+ <view class="up-list-item">
+   <navigator url="../article/article?id=2">
+  <view class="item-desc-container">
+     <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+     <view class="info-view">
+       <text class="title">死了都要玩的极限旅游体验</text>
+       <view class="target-word">
+         <image src="../../icon/eye.png"></image>
+         <text>12312</text>
+       </view>
+     </view>
+  </view>
+  </navigator>
+</view>
+
+
+<view class="up-list-item">
+  <navigator url="../article/article?id=2">
+ <view class="item-desc-container">
+    <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+    <view class="info-view">
+      <text class="title">死了都要玩的极限旅游体验</text>
+      <view class="target-word">
+        <image src="../../icon/eye.png"></image>
+        <text>12312</text>
+      </view>
+    </view>
+ </view>
+ </navigator>
+</view>
+
+
+<view class="up-list-item">
+  <navigator url="../article/article?id=2">
+ <view class="item-desc-container">
+    <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+    <view class="info-view">
+      <text class="title">死了都要玩的极限旅游体验</text>
+      <view class="target-word">
+        <image src="../../icon/eye.png"></image>
+        <text>12312</text>
+      </view>
+    </view>
+ </view>
+ </navigator>
+</view>
+
+
+<view class="up-list-item">
+  <navigator url="../article/article?id=2">
+ <view class="item-desc-container">
+    <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+    <view class="info-view">
+      <text class="title">死了都要玩的极限旅游体验</text>
+      <view class="target-word">
+        <image src="../../icon/eye.png"></image>
+        <text>12312</text>
+      </view>
+    </view>
+ </view>
+ </navigator>
+</view>
+
+
+<view class="up-list-item">
+  <navigator url="../article/article?id=2">
+ <view class="item-desc-container">
+    <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+    <view class="info-view">
+      <text class="title">死了都要玩的极限旅游体验</text>
+      <view class="target-word">
+        <image src="../../icon/eye.png"></image>
+        <text>12312</text>
+      </view>
+    </view>
+ </view>
+ </navigator>
+</view>
+
+
+<view class="up-list-item">
+  <navigator url="../article/article?id=2">
+ <view class="item-desc-container">
+    <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+    <view class="info-view">
+      <text class="title">死了都要玩的极限旅游体验</text>
+      <view class="target-word">
+        <image src="../../icon/eye.png"></image>
+        <text>12312</text>
+      </view>
+    </view>
+ </view>
+ </navigator>
+</view>
+
+<view class="up-list-item">
+  <navigator url="../article/article?id=2">
+ <view class="item-desc-container">
+    <image class="item-img" src="//a.diaox2.com/cms/sites/default/files/20161017/extgt/wai640.jpg"></image>
+    <view class="info-view">
+      <text class="title">死了都要玩的极限旅游体验</text>
+      <view class="target-word">
+        <image src="../../icon/eye.png"></image>
+        <text>12312</text>
+      </view>
+    </view>
+ </view>
+ </navigator>
+</view>
+
+
+</view> -->
+
+
+
+
+
+  </view>
+</view>
+
+
+
+<!-- 模态框start -->
+<!-- <modal hidden="{{modalHidden}}" no-cancel confirm-text="确定" bindconfirm="hideModal">
+  {{info}}
+</modal> -->
+<!-- 模态框end -->
+
+<!-- action sheet start -->
+<!-- <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+  <block wx:for="{{actionSheetItems}}">
+    <action-sheet-item bindtap="bindItemTap" data-item="{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel bindtap="hideActiveSheet">取消</action-sheet-cancel>
+</action-sheet> -->
+
+<!-- action sheet end -->
+<!-- <action-sheet hidden="{{orderByActionSheetHidden}}" bindchange="orderByActionSheetChange">
+  <block wx:for="{{orderByActionSheetItems}}">
+    <action-sheet-item bindtap="orderByBindItemTap" data-item="{{item}}">{{item}}</action-sheet-item>
+  </block>
+  <action-sheet-cancel bindtap="orderByHideActiveSheet">取消</action-sheet-cancel>
+</action-sheet> -->
+<!-- action sheet end -->

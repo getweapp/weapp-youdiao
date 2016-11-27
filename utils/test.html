@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="renderer" content="webkit">
+<title>Document</title>
+<script type="text/javascript">
+  (function(){
+    var arr = [1, 2, 3]
+    function changeArr(arr, value){
+      arr.push(value)
+      return arr
+    }
+    var ret = changeArr(arr,4)
+    console.log(arr) // [1, 2, 3, 4]
+    console.log(arr === ret) // true
+
+    var ret2 = changeArr(arr,5)
+    console.log(arr) // [1, 2, 3, 4, 5]
+    console.log(arr === ret2) // true
+
+    // arr对象的位置（即引用地址）没变，但是内部含有的数据变了，那么changeArr算是纯函数么？
+  }());
+
+
+  (function(){
+    var v = 1
+    function add(v, toAdd){
+      return v + toAdd
+    }
+    var ret = add(v,2)
+    console.log(ret) // 3
+
+    var ret2 = add(v,2)
+    console.log(ret2) // 3
+  }())
+
+  function Person(name,age){
+  this.name = name
+  this.age = age
+  return {id:2}
+}
+
+var p = new Person('taurus_wood', 20) // [1, 2, 3]
+
+
+
+function Person2(name,age){
+  this.name = name
+  this.age = age
+  return 1
+}
+
+var p2 = new Person2('taurus_wood', 20) // {name:'taurus_wood', age: 20}
+</script>
+</head>
+<body>
+</body>
+</html>

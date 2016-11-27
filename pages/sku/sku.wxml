@@ -1,0 +1,121 @@
+<view class="container">
+    <view class="sku">
+      <image src="{{sku.images[0].url}}"
+        style="width:150rpx;height:150rpx;">
+      </image>
+      <view class="sku-info">
+        <text class="sku-title">{{sku.title}}</text>
+        <text class="sku-from">{{sku.brand}}</text>
+      </view>
+    </view>
+    <text class="buy-method-tips">您可以通过以下方式购买</text>
+
+    <view class="buy-area">
+      <block wx:for="{{sku.sales}}" wx:key="{{sku.sid}}" wx:for-item="sale">
+        <view class="buy-item">
+          <view class="item-header">
+            <text>{{sale.mart}}</text>
+            <image src="{{sale.url}}" style="width:{{ 28 * sale.ratio }}rpx;height:28rpx;"></image>
+          </view>
+          <view class="item-info">
+            <view class="info-area">
+              <view class="info">
+                <text class="key">价格：</text>
+                <text class="value price">{{sale.price}}</text>
+              </view>
+              <view class="info">
+                <text class="key">说明：</text>
+                <text class="value">{{sale.intro}}</text>
+              </view>
+            </view>
+            <text class="buy-button" bindtap="buy" data-url="{{sale.link_m_cps || sale.link_pc_cps || sale.link_m_raw || sale.link_pc_raw}}">购买 ></text>
+          </view>
+        </view>
+      </block>
+
+      <!-- <view class="buy-item">
+        <view class="item-header">
+          <text>淘宝</text>
+          <image src="http://c.diaox2.com/cms/diaodiao/mart2/tb.png" style="width:60rpx;height:24rpx;"></image>
+        </view>
+        <view class="item-info">
+          <view class="info-area">
+            <view class="info">
+              <text class="key">价格：</text>
+              <text class="value price">约￥332</text>
+            </view>
+            <view class="info">
+              <text class="key">说明：</text>
+              <text class="value">May28TH.Me官网。多种颜色表带可选，官网不能直1>May28TH.Me官网。多种颜色表带可选，官网不能直1>May28TH.Me官网。多种颜色表带可选，官网不能直1>May28TH.Me官网。多种颜色表带可选，官网不能直1</text>
+            </view>
+          </view>
+          <view class="buy-button">
+            <text>购买 ></text>
+          </view>
+        </view>
+      </view> -->
+
+    </view>
+    <text class="buy-price-tips">价格仅供参考，实际价格以卖家为准</text>
+</view>
+
+
+
+<!-- <view class="container">
+    <view class="sku">
+      <image
+        src="http://content.image.alimmdn.com/sku/14779768991_jpg.jpg@200w_200h_1e%7C200x200-5rc"
+        style="width:150rpx;height:150rpx;">
+      </image>
+      <view class="sku-info">
+        <text class="sku-title">May28TH.Me丝巾表带石英表Me丝巾表带石英表Me丝巾表带石英表</text>
+        <text class="sku-from">约￥185起</text>
+      </view>
+    </view>
+    <text class="buy-method-tips">您可以通过以下方式购买</text>
+    <view class="buy-area">
+      <view class="buy-item">
+        <view class="item-header">
+          <text>官网</text>
+          <image src="http://c.diaox2.com/cms/diaodiao/mart2/default.png" style="width:60rpx;height:24rpx;"></image>
+        </view>
+        <view class="item-info">
+          <view class="info-area">
+            <view class="info">
+              <text class="key">价格：</text>
+              <text class="value price">约￥332</text>
+            </view>
+            <view class="info">
+              <text class="key">说明：</text>
+              <text class="value">May28TH.Me官网。多种颜色表带可选，官网不能直1</text>
+            </view>
+          </view>
+          <view class="buy-button">
+            <text>购买 ></text>
+          </view>
+        </view>
+      </view>
+      <view class="buy-item">
+        <view class="item-header">
+          <text>淘宝</text>
+          <image src="http://c.diaox2.com/cms/diaodiao/mart2/tb.png" style="width:60rpx;height:24rpx;"></image>
+        </view>
+        <view class="item-info">
+          <view class="info-area">
+            <view class="info">
+              <text class="key">价格：</text>
+              <text class="value price">约￥332</text>
+            </view>
+            <view class="info">
+              <text class="key">说明：</text>
+              <text class="value">May28TH.Me官网。多种颜色表带可选，官网不能直1>May28TH.Me官网。多种颜色表带可选，官网不能直1>May28TH.Me官网。多种颜色表带可选，官网不能直1>May28TH.Me官网。多种颜色表带可选，官网不能直1</text>
+            </view>
+          </view>
+          <view class="buy-button">
+            <text>购买 ></text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <text class="buy-price-tips">价格仅供参考，实际价格以卖家为准</text>
+</view> -->

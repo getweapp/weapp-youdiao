@@ -1,0 +1,183 @@
+<loading hidden="{{loadingHidden}}">玩命加载中...</loading>
+<view class="container">
+  <!-- 文章头 -->
+  <view class="header">
+
+    <!-- <swiper class="banner-list" indicator-dots="true" autoplay="false" interval="3000">
+      <block>
+        <swiper-item>
+          <image class="banner" src="http://content.image.alimmdn.com/cms/sites/default/files/20160921/goodthing/33333.jpg@768w_1l"></image>
+        </swiper-item>
+        <swiper-item>
+          <image class="banner" src="http://a.diaox2.com/cms/sites/default/files/20161008/goodthing/640416.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+          <image class="banner" src="http://a.diaox2.com/cms/sites/default/files/20161017/goodthing/tomesfengmian.jpg"></image>
+        </swiper-item>
+        <swiper-item>
+          <image class="banner" src="http://a.diaox2.com/cms/sites/default/files/20161018/goodthing/hatIMGsss1.jpeg"></image>
+        </swiper-item>
+      </block>
+    </swiper> -->
+
+    <swiper class="banner-list" indicator-dots="{{header.banners.length > 1}}" autoplay="false" interval="3000" wx:if="{{header.banners.length > 0}}">
+      <block>
+        <swiper-item wx:for="{{header.banners}}" wx:key="item.id">
+          <image class="banner" src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <!-- <view class="title-container">
+      <text class="title">有调限量帆布袋——“鸡汤包”，正式发售</text>
+    </view> -->
+
+    <view class="title-container">
+      <text class="title">{{header.title}}</text>
+    </view>
+
+    <!-- <view class="price-and-author-container">
+      <text class="price">￥30</text>
+      <text class="datetime">2016-10-20</text>
+      <view class="author">
+        <image src="http://c.diaox2.com/cms/diaodiao/assets/icontodown.png"></image>
+        <text>有调</text>
+      </view>
+    </view> -->
+
+    <view class="price-and-author-container">
+      <text class="{{header.price.type}}">{{header.price.value}}</text>
+      <view class="author">
+        <image src="{{header.author.url}}"></image>
+        <text>{{header.author.value}}</text>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="content">
+
+    <!-- <view>
+      <view class="sku">
+        <image
+          src="http://content.image.alimmdn.com/sku/14779768991_jpg.jpg@200w_200h_1e%7C200x200-5rc"
+          style="width:150rpx;height:150rpx;">
+        </image>
+        <view class="sku-info">
+          <text class="sku-title">May28TH.Me丝巾表带石英表Me丝巾表带石英表Me丝巾表带石英表</text>
+          <view class="sku-footer">
+            <text>约￥185起</text>
+            <navigator url="../sku/sku?sid=7966">立即购买</navigator>
+          </view>
+        </view>
+      </view>
+    </view> -->
+
+    <view wx:for="{{contents}}" wx:for-item="content" wx:key="type">
+      <!--
+        图片宽高需要计算
+        整个屏幕大小：750rpx
+        左右间隔大小：24 * 2 = 48rpx
+        图片宽度大小：750 - 48 = 702rpx
+        图片高度大小：图片高宽比 * 图片宽度大小 = ( naturalHeight / naturalWidth ) * 702
+      -->
+      <!-- type: img -->
+      <image wx:if="{{content.type === 'img'}}"
+             src="{{content.value}}"
+             class="img"
+             mode="aspectFill"
+             style="width:702rpx;height:{{content.height / content.width * 702 }}rpx;"></image>
+      <!-- <text wx:if="{{content.type === 'img'}}" src="{{content.value}}" class="img"  mode="aspectFill" style="width:{{content.width}};height:{{content.height}};">width:{{content.width}}px;height:{{content.height}}px;</text> -->
+      <!-- type: ul -->
+      <view wx:elif="{{content.type === 'ul'}}" class="ul">
+        <text wx:for="{{content.items}}" class="li" wx:key="item.id">{{item}}</text>
+      </view>
+      <!-- type: sku -->
+      <view wx:elif="{{content.type === 'sku'}}" class="sku">
+        <image src="{{content.value.url}}" style="width:150rpx;height:150rpx;"></image>
+        <view class="sku-info">
+          <text class="sku-title">{{content.value.title}}</text>
+          <view class="sku-footer">
+            <text>{{content.value.price}}</text>
+            <navigator url="../sku/sku?sid={{content.value.sid}}">立即购买</navigator>
+          </view>
+        </view>
+      </view>
+      <!-- type: ol -->
+      <view wx:elif="{{content.type === 'ol'}}" class="ol">
+        <text wx:for="{{content.items}}" class="li" wx:key="item.id">{{item}}</text>
+      </view>
+      <!-- type: p/h2/h3/editorhead/editorcontent/tips/lift/address -->
+      <text wx:else class="{{content.type}}"> {{content.value}} </text>
+    </view>
+
+
+    <!-- <text class="editorhead">小编说</text>
+    <text class="editorcontent">上次手贱，在写《当我们说原牛，其实我们在谈什么？》的时候卖了个关子，表示脱浆保养以后慢慢聊，结果文章发出来后评论区里面各种关心养护问题，于是在内部群里被花样吊打。霸气的雪姨最后拎着皮鞭撂了狠话，“抓紧整一篇保养的文章出来，不然这个嘿嘿嘿就不是那个嘿嘿嘿了！”于是无奈再次转入码字状态……PS. 文章最后有补充上次原牛入门款推荐——女款原牛的推荐哦！
+    </text>
+    <text class="p">前一阵，朋友圈刷起了一阵“感觉身体被掏空”，其中有两句歌词，真的是触目惊心：十八天没有卸妆，月抛带了两年半。怎么样，那些常年加班的人士，有没有戳中泪点！</text>
+    <text class="p">Anyway，生活已经如此艰辛+不堪了，为何不自己找点儿乐子享受此刻呢？</text>
+
+    <view class="ul">
+      <text class="li">想早睡早起，却总是给自己找借口，做不到？想早睡早起，却总是给自己找借口，做不到？想早睡早起，却总是给自己找借口，做不到？</text>
+      <text class="li">有想法，却总是告诉自己：等一下再做？</text>
+      <text class="li">列了计划却还是不能按部就班的完成？</text>
+    </view>
+
+    <view class="ol">
+      <text class="li">想早睡早起，却总是给自己找借口，做不到？想早睡早起，却总是给自己找借口，做不到？</text>
+      <text class="li">有想法，却总是告诉自己：等一下再做？</text>
+      <text class="li">列了计划却还是不能按部就班的完成？</text>
+    </view>
+
+    <text class="p">...</text>
+
+    <text class="tips">战拖会 ：全国最大、最专业的战胜拖延症机构。曾于2012年，翻译出版了《拖延心理学2》。在豆瓣上有“我们都是拖延症”小组，在果壳上有“挑战拖延症”小组等。
+    </text>
+
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG2_3.jpeg@768w_1l"></image>
+    <text class="tips">战拖会 ：全国最大、最专业的战胜拖延症机构。曾于2012年，翻译出版了《拖延心理学2》。在豆瓣上有“我们都是拖延症”小组，在果壳上有“挑战拖延症”小组等。
+    </text>
+    <text class="p">所以，不妨入手一个有调“鸡汤包”，不开心的时候，就想想这十六字箴言“喜欢就买、不行就分、多喝热水、重启试试”，感觉整个人都起飞了。</text>
+    <text class="h2">寓意</text>
+    <text class="address">错误示范：不要将贵重物品放到外面...</text>
+    <text class="h3">喜欢就买</text>
+    <text class="address">错误示范：不要将贵重物品放到外面...</text>
+    <text class="p">生活已经被各种烦心琐事纠缠得不堪，何必还要在shopping这件事儿上给自己添麻烦呢？不如“喜欢就买”，给自己增添一丝欢乐的色彩。</text>
+    <text class="h3">不行就分</text>
+    <text class="p">要知道，人生没有过不去的坎儿，只有读不完的书。不要因为碰到几个渣男或作妖儿女，就觉得生无可恋。快刀斩乱麻，才能大口吃瓜，快意飞马。朋友，不行的话，还真是得分。</text>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/6.jpg@768w_1l"></image>
+    <text class="address">错误示范：不要将贵重物品放到外面...</text>
+    <text class="h3">多喝热水</text>
+    <text class="p">照顾好自己，比什么都强。而“多喝热水”就是照顾好自己的方式之一。现在天气正由热转凉，不妨备些咖啡或茶叶，给自己准备一壶热水，温暖的度过一下午。</text>
+    <text class="h3">重启试试</text>
+    <text class="p">电脑黑屏、手机死机，别着急，深呼吸一下，让自己冷静下来，然后重启试试。别看这招简单粗暴，其实却最管用。</text>
+    <text class="h2">基本信息</text>
+    <text class="p">基本信此次帆布包，我们采用了常见的12安帆布来制作。12安帆布最大的特点就是厚度适中，且非常耐用。实用性：💯。息</text>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG12.jpeg@768w_1l"></image>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG15.jpeg@768w_1l"></image>
+    <text class="p">做之前，我们参考了好多帆布包的尺寸，后来觉得36*40cm是最合适的，因为这样看着舒服。除此之外，我们特意选择了一种背包外侧带兜的设计，方便大家把零碎的小东西装进去。</text>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG16.jpeg@768w_1l"></image>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG19.jpeg@768w_1l"></image>
+    <text class="lift">错误示范：不要将贵重物品放到外面...</text>
+    <text class="p">两种背带的设计，可以提高使用频率。无论你是出门时想单肩背，还是累的时候想斜挎，都能完美的实现。</text>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG21.jpeg@768w_1l"></image>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG18.jpeg@768w_1l"></image>
+    <text class="p">颜色的话，帆布包呈米白色。恰好和蓝黑色的十六字完美的相配。</text>
+    <text class="h2">关于购买</text>
+    <text class="h3">积分购买</text>
+    <text class="p">如果你不舍得使用积分，没关系，也可以原价购买。￥30即可入手此帆布包。购买戳这里</text>
+    <text class="h3">原价购买</text>
+    <text class="p">如果你不舍得使用积分，没关系，也可以原价购买。￥30即可入手此帆布包。购买戳这里</text>
+    <text class="p">当然，每位购买帆布包的同学，都将获得一枚胸针。就像下面这样，每天别在不同的位置，嘿嘿。</text>
+
+    <text class="lift">我司同事已经迫不及待的开始背上它了~</text>
+    <text class="p">如果你喜欢，也可以选择像上面那样，自己买一盒粉笔，然后每天在不同的位置“打钩”，以彰显自己“气宇非凡”的帆布包。~</text>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160919/goodthing/WechatIMG18.jpeg@768w_1l"></image>
+    <text class="p">好了，不多说了，大家赶紧“喜欢就买”吧！~</text>
+    <image class="img" mode="aspectFill" src="http://content.image.alimmdn.com/cms/sites/default/files/20160921/goodthing/WechatIMG5.jpg@768w_1l"></image> -->
+
+
+
+  </view>
+</view>

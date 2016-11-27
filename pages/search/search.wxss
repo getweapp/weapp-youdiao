@@ -1,0 +1,105 @@
+/**index.wxss**/
+/*
+ 1. 不认ID
+ 2. 不认属性选择符
+ 3. 不认相邻兄弟选择符
+*/
+
+/* 横条结构卡片 */
+.container{
+  background-color: #fff;
+}
+
+.search-box{
+  background-color: rgb(242,63,65);
+}
+
+
+.result-area{
+  padding-top: 15px;
+}
+
+.section-sep{
+  padding:0 15px;
+  background-color: #fff;
+  font-size: 16px;
+  color:#080808;
+}
+
+.up-list{
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.up-list-item navigator{
+  padding: 15px 15px 0 15px;
+}
+
+.item-desc-container{
+  flex: 1;
+  display: flex;
+  border-bottom: 1px rgb(237,237,237) solid;
+  padding-bottom: 15px;
+}
+
+.item-img{
+  width: 80px;
+  height: 80px;
+}
+
+.info-view{
+  flex: 1;
+  margin-left:15px;
+  font-size: 12px;
+  color:#999;
+}
+
+.title{
+  font-size:14px;
+  line-height: 1.45;
+  max-height: 41px;
+  color:#080808;
+  margin-bottom: 10px;
+
+  word-break: break-all;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: start;
+  -webkit-line-clamp: 2;
+}
+
+.target-word image{
+  width: 18px;
+  height: 10px;
+  margin-right: 5px;
+}
+
+/* 快捷搜索 */
+.quick-search-container{
+  font-size:14px;
+  color:#333;
+  line-height:1;
+  background-color: #fff;
+  padding: 0 15px 15px 15px;
+}
+
+.quick-search-list{
+  border-bottom:1px rgb(235,235,235) solid;
+  padding-bottom: 15px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-between;
+}
+
+.quick-search-item{
+  margin-top: 15px;
+}
+
+.quick-search-item text{
+    display: block;
+    padding: 12px 8px;
+    border:1px rgb(235,235,235) solid;
+    box-sizing: border-box;
+}
